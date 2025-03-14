@@ -9,7 +9,7 @@
 )
 
 // Set fontawesome icons
-#let fa_path = "/img/fa/fa-";
+#let fa_path = "../img/fa/fa-";
 
 #let fa_home = icon(fa_path + "home.svg");
 #let fa_email = icon(fa_path + "envelope.svg");
