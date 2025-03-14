@@ -6,6 +6,9 @@
 
 https://typst.app/project/rfpde3yze1z2tOZRhCs2Ia
 
+![image](https://github.com/user-attachments/assets/b8640849-af1f-455f-a449-f91a47c679d5)
+
+
 ## 主要改进：
 
 可控的斜体： 引入 fakeitalic 函数，允许对特定文本（如英文单词）应用斜体样式，且不影响中文字符，实现更专业的排版效果。
