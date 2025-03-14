@@ -4,7 +4,7 @@
 
 ## 主要改进：
 
-可控的斜体： 引入 fakeitalic 函数，允许对特定文本（如英文单词）应用斜体样式，且不影响中文字符，实现更专业的排版效果。
+可控的斜体： 引入 fakeitalic 函数，允许对特定文本应用斜体样式，（支持中文字符），实现更专业的排版效果。
 精细的间距控制： 提供更丰富的间距参数，如 itemSpacing、partChilineSpacing、partSpacing 等，方便用户根据需求调整简历布局。
 更清晰的代码结构： 优化了模板代码，提高可读性和可维护性。
 更灵活的列表样式： 增加了listLeadingString 与 simpleLabeledString函数, 使得列表样式的定制更为灵活。
