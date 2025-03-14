@@ -1,132 +1,172 @@
-// import from template
 #import "../template/template.typ": *;
 #show: template;
-
-#init(
-    name: "张三",
-    // 如不需要头像，可注释掉上面的 pic_path 行，或者将其置空
-    pic_path: "/img/avatar.jpg",
-    // pic_path : "",
+#init("喵喵")
+#stack(
+  spacing: 12pt,
+  headline(
+    name: "喵喵",
+    pic_path: "../img/meow.png", // 替换为猫娘头像图片路径
+  ),
+  stack(
+    spacing: -4pt,
+    [
+      #info(
+        color: rgb(0, 0, 0),
+        (
+          icon: fa_phone,
+          link: "tel:+1234567890",
+          content: "+123 456 7890",
+        ),
+        (
+          icon: fa_email,
+          link: "meow@example.com",
+          content: "meow@example.com",
+        ),
+      )
+    ],
+    [
+      #info(
+        color: rgb(0, 0, 0),
+        (
+          icon: fa_github,
+          link: "https://github.com/MeowMeow",
+          content: "github.com/MeowMeow",
+        ),
+        (
+          icon: fa_home,
+          link: "https://meow.example.com",
+          content: "meow.example.com",
+        ),
+      )
+    ],
+  ),
 )
-
-#info(
-    color: rgb(0, 0, 0),
-    (
-        icon: "/img/fa/fa-home.svg",
-        link: "https://zhangsan.io/",
-        content: "https://zhangsan.io/"
+#stack(
+  spacing: partSpacing,
+  part(
+    partName: "教育经历",
+    contentItems: (
+      item(
+        "喵喵大学·猫咪学院",
+        "本科 | 喵咪行为学",
+        "喵星顶级学府",
+        "20XX.09 -- 20XX.06",
+        subContent: (
+          listLeadingString([*排名*: 喵星前列 #h(1em) *GPA*: 4.0/4.0 #h(1em) *语言*: 喵语精通]),
+          labeledString(
+            "主要课程",
+            "高级蹭蹭技巧、激光笔追逐艺术、纸箱钻研学、毛线球操控大师",
+          ),
+        ),
+      ),
     ),
-    (
-        icon: fa_email,
-        link: "mailto:San%20Zhang<me@zahangsan.io>",
-        content: "me@zhangsan.io",
+  ),
+  part(
+    partName: "竞赛经历",
+    contentItems: (
+      item(
+        "全球喵咪攀爬大赛",
+        [(冠军)*金奖*],
+        "高级组",
+        "20XX.07",
+      ),
+      item(
+        "国际喵咪卖萌大赛",
+        [(冠军)*金奖*],
+        "专业组",
+        "20XX.06",
+      ),
+      item(
+        "喵星纸箱钻研大赛",
+        [(冠军)*金奖*],
+        "",
+        "20XX.05",
+      ),
+      v(-0.3em),
+      fakeitalic("其他喵咪赛事若干"),
     ),
-    (
-        icon: fa_phone,
-        link: "tel:+86 133 3333 3333",
-        content: "+86 133 3333 3333",
+  ),
+  part(
+    partName:"科研经历",
+    contentItems: (
+      item(
+        "喵喵大学·喵咪行为实验室",
+        "研究员",
+        "师从喵教授，研究高级蹭蹭行为对人类的影响，发表多篇喵界顶级论文。",
+        "20XX.06 -- 至今",
+      ),
+      item(
+        "喵星激光笔追逐研究中心",
+        "实习研究员",
+        "参与激光笔追逐路径优化研究，提出新型追逐算法，提升追逐效率。",
+        "20XX.01 -- 20XX.06",
+      ),
     ),
-)
-// // 如果info太长，可以多次调用info实现分行
-// #info(
-//     color: rgb(0, 0, 0),
-//     (
-//         icon: fa_github,
-//         link: "https://github.com/xxxxxx",
-//         content: "xxxxxx"
-//     ),
-// )
-
-#resume_section("教育经历")
-
-#resume_item(
-  "家里蹲大学·计算机学院",
-  "硕士生 | 计算机技术",
-  "泵饶叙史掷陋谣邪苦豫锣旧技贸刃蛭！天绳顺。",
-  "2024.09 -- 2027.06（预计）"
-)
-
-#resume_item(
-  "家里蹲大学·软件工程学院",
-  "软件工程",
-  "普闯昨制动辞诬爸磨警据知示蝶这界解聪柔甚驳机禽赵。",
-  "2020.09 -- 2024.06"
-)
-
-#resume_section([实践经历])
-
-#resume_item(
-  "某大厂",
-  "实习生",
-  "宇宙中心曹县",
-  "2021.11 -- 至今"
-)
-#resume_desc("工作职责", "泵饶叙史掷陋谣邪苦豫锣旧技贸刃蛭！天绳顺。普闯昨制动辞诬爸磨警据知示蝶这界解聪柔甚驳机禽赵，郎吻骑藏池莲汰炫换布牌墓吐匹儡持涤贤奉访脂拱牺慧来患赞角混越美吓凑尸涉籼！背饥砂兄着农撑棒扑，虑蹄蒲管")
-#resume_desc("工作成果", "获得了某大厂的认可")
-
-#resume_section("发表论文")
-
-- [XXXX 2023]*You*, #lorem(5), and #lorem(1). "#lorem(10)" Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.
-
-#resume_section([项目经历])
-
-#resume_item(
-  "一种基于深度学习的摸鱼方法",
-  "项目负责人，主要完成人",
-  [家里蹲大学·大创项目],
-  "2021.11 -- 2022.11"
-)
-#resume_desc(
-  "项目简介",
-  "叠川卸瞬怨细祥锐萨弗宝，箭粘畏疯秘粮才箭痛队短铡堰姑则鳄绪，必慈看述米糖怀第坪定掌铭渔云；抵陷子苍熹话茫乎扯殉酯差述喜喊襄龙翼俄胞摘嫌幕。"
-)
-#resume_desc(
-  "承担工作",
-  [统筹安排小组计划，文献调研，算法设计与一部分实验，结论总结与报告编写。园厉搏尺枣段，彭覆般，家资颌寨偷迟色庭很大松锈虽堕纯烤？砧煮？]
-)
-#resume_desc(
-  "项目成果",
-  "环械深韦寨予助链削睛宴育症更碑矿火将任洁涤堆玲。"
-)
-
-#resume_section([竞赛经历与所获表彰])
-
-#resume_desc(
-  "专业技能竞赛",
-  [肺己阐择萧精拜纱茎、掺圈剪绒鲢碧捞使永扩、逸螟株捆穿虽危熔烫行锄厉戒凹册嗨茄、王暗脉炮深竖政、怕蠢批割万柳休胁助黎嘲壤缓廷急烟顷寇；]
-)
-#resume_desc(
-  "数学建模竞赛",
-  [妹赋替茫竟督。祁澜条淘褶知溃牺谨挣霞逆梯墙免扫惯士梭栋陆理，案侨斋相巍阴狂煽川弧轮围惨畦素苷瓷总贾醛晒靳斥纤奶锡欲吭颁天总岁、罚。]
-)
-#resume_desc(
-  "程序设计竞赛",
-  [秀咂剧图硷辩股乳、陵粹垫绝展践服耘挡、谴妥烯峪莫宪闹怀、是牲假妈岘框联好望缩碧掀；]
-)
-#resume_desc(
-  "奖学金",
-  [楔株酿津。宋扩镗盼瞬催什斧菌潘谱昭逝迫申将酸保舰戒惊蕴鞘哩爬；]
-)
-#resume_desc(
-  "其他表彰",
-  [死途腋跳锻垒带抱滥狱肾杰丸蚕莎细宣逸祥时夜！绥活浦踏肥麦山银呀缚揭嘲值凹允穆表斤格略署。]
-)
-
-#resume_section([专业技能])
-
-#resume_desc(
-  "编程语言",
-  [悬圭班，弄艘街胃海代遭颤淮，曝一帅典龟贝枕示耙灶婶挡叠师倾锦起苗待荡纪致旁报、泪哇衫截缺其爬制]
-)
-#resume_desc(
-  "开发工具",
-  [由讽涝稼曹涨拣，抖，壁汹役崎垒是牲供饮啉文熏灵压肆欺警巨育俞殖局说骑曾跗劲轻团舰直双品屁锐池雏趣笼久袖煤技艰哑密钠赌葱隙恋衫枝历陋拴访待禁吾、下赵釉轻禾。谴延来码灼逃。]
-)
-#resume_desc(
-  "知识领域",
-  [坎姜醋摄威昼仇恋棋赫侦殖烙每绥弃本蓟抑液亡抹蔑介属，拨波汰肥碰紧痰狂弯把鼎榆淤砧救搞。]
-)
-#resume_desc(
-  "外语能力",
-  [CET-6 666分、雅思 9.0。]
+  ),
+  part(
+    partName:"项目经历",
+    contentItems: (
+      item(
+        "《纸箱堡垒》",
+        "项目负责人，主要完成人",
+        "设计并建造多层纸箱堡垒，提升喵咪居住体验。",
+        "20XX.11 -- 20XX.07",
+        subContent: (
+          listLeadingString(["使用高级纸箱折叠技巧，设计多功能居住空间，包括瞭望台、休息区、隐藏通道等。"]),
+        ),
+      ),
+      item(
+        "《毛线球大师》",
+        "项目主要完成人",
+        "开发毛线球操控技巧，提升喵咪娱乐体验。",
+        "20XX.02 -- 20XX.06",
+        subContent: (
+          listLeadingString(["设计多种毛线球操控模式，包括空中接力、障碍穿越、精准打击等。"]),
+        )
+      ),
+      fakeitalic("其他小型喵咪项目及demo"),
+    )
+  ),
+  part(
+    partName:"主要学生工作与所获奖项",
+    contentItems: (
+      item(
+        "喵星最佳蹭蹭奖",
+        "获奖喵咪",
+        "",
+        "20XX.10"
+      ),
+      item(
+        "喵星最佳卖萌奖",
+        "获奖喵咪",
+        "",
+        "20XX.11"
+      ),
+      item(
+        "喵喵大学·喵咪学生会",
+        "主席",
+        "负责组织学生活动，协调学生事务，提升学生福利。",
+        "20XX.09 -- 至今"
+      ),
+      item(
+        "喵喵大学·喵咪社团联合会",
+        "会长",
+        "负责管理社团，组织社团活动，丰富校园生活。",
+        "20XX.09 -- 20XX.09"
+      ),
+    )
+  ),
+  part(
+    partName:"技能与兴趣",
+    contentItems: (
+      simpleLabeledString(
+        "喵咪技能",
+        "高级蹭蹭、激光笔追逐、纸箱钻研、毛线球操控、卖萌",
+      ),
+      simpleLabeledString(
+        "个人兴趣",
+        "探索未知领域，追求卓越，热爱喵咪事业，对人类行为学有浓厚兴趣。"
+      )
+    )
+  ),
 )
